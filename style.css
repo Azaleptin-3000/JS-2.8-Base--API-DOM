@@ -1,0 +1,186 @@
+h1 {
+    font-size: 30px;
+    color: rgb(77, 5, 132);
+    font-weight: lighter;
+    text-align: center;
+    padding-top: 30px;
+}
+
+ h2 {
+    font-size: 32px;
+    color: #c50000;
+    font-weight: bolder;
+    text-align: center;
+    padding-top: 10px;
+}
+
+html, body {
+    height: 100%; /* Задаем высоту для body */
+    margin: 0; /* Убираем отступы */
+    display: flex;
+    flex-direction: column; /* Располагаем элементы по вертикали */
+}
+
+.content {
+    flex: 1; /* Контент будет занимать оставшееся пространство */
+}
+
+#myImage {
+    max-width: 15%;
+    height: auto;
+    margin-top: 50px;
+    margin-bottom: 100px; /* Нижний отступ */
+    z-index: 1; /* Повышаем z-index, чтобы текст был выше фона */
+    position: relative; /* Добавляем position для работы с z-index */
+}
+
+.background-image {
+    background-image: url('./images/browsers-2.jpg'); /* Путь к изображению */
+    background-size: cover; /* Заполняем весь блок */
+    background-position: center; /* Центрируем изображение */
+    flex-grow: 1; /* Позволяет этому блоку занимать оставшееся пространство */
+    padding-left: 40px; /* Отступы вокруг контента */
+    padding-right: 15px; /* Отступы вокруг контента */
+    position: relative; /* Позволяет размещать псевдоэлемент */
+}
+
+.background-image::before {
+    content: ""; /* Создаем псевдоэлемент */
+    position: absolute; /* Фиксируем его позицию */
+    top: 0; /* Начинаем с верхнего края */
+    left: 0; /* Начинаем с левого края */
+    right: 0; /* Расширяем до правого края */
+    bottom: 0; /* Расширяем до нижнего края */
+    background-color: rgba(224, 235, 255, 0.8); /* Белый 70%-полупрозрачный слой */
+    z-index: 0; /* Помещаем ниже текста */
+}
+
+h1, h2, h3, h4, h5, ul, p {
+    position: relative; /* Элементы остаются над псевдоэлементом */
+    margin: 0; /* Убираем отступы у заголовка */
+    z-index: 1; /* Повышаем z-index, чтобы текст был выше фона */
+}
+
+.first-paragraph {
+    text-indent: 2px; /* Отступ первой строки в первом абзаце */
+    font-style: normal; /* Обычное начертание */
+    color: black; /* Цвет текста */
+}
+
+.second-paragraph {
+    text-indent: 30px; /* Отступ первой строки во втором абзаце */
+    font-style: light; /* Курсив для второго абзаца */
+    color: rgb(8, 0, 55); /* Цвет текста */
+}
+
+h4 {
+    margin-top: 40px;
+    padding-left: 10px;
+    font-size: 15px;
+    font-style: light;
+    font-display: 1px;
+    color: #9390c8;
+    }
+
+h5 {
+    font-size: 18px;
+    padding-top: 10px;
+    margin-left: 90px;
+   }
+
+.custom-list {
+    list-style-type: disc; /* Тип маркера (диск) */
+    margin-left: 5px; /* Отступ слева для списка */
+    }
+
+.custom-list li {
+    padding-left: 0px; /* Небольшой отступ для текста */
+    margin-left: 0; /* Использование отрицательного отступа для приближения маркера к тексту */
+    margin-bottom: 3px; /* Отступ между элементами списка */
+}
+
+/* Стили для маркеров */
+.custom-list li::marker {
+    color: rgb(145, 1, 1); /* Цвет маркера */
+    font-weight: bold; /* Жирный шрифт для маркера (по желанию) */
+    font-size: 20px;
+}
+
+#myParagraphJS {
+    margin-top: 40px;
+    color: #ce670e;
+}
+
+#myElement-get {
+    margin-top: 40px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    text-align: left; /* Выравнивание текста по левому краю */
+    margin-left: 0; /* Убираем левый отступ, если он есть */
+    color: #2f6c04;
+}
+
+a {
+    position: relative; /* Позволяет использовать z-index */
+    z-index: 1; /* Поднимаем ссылку над полупрозрачным слоем */
+}
+
+#myLink {
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 15px; /* Отступ между полями ввода */
+    max-width: 400px; /* Максимальная ширина формы */
+    position: relative; /* Позволяет использовать z-index */
+    z-index: 1; /* Поднимаем форму над полупрозрачным слоем */
+}
+
+label {
+    display: block; /* Отображение метки в виде блочного элемента */
+    margin-bottom: 5px; /* Отступ между меткой и полем ввода */
+}
+
+input {
+    width: 100%; /* Ширина поля ввода на всю ширину родителя */
+    padding: 8px; /* Отступ внутри поля ввода */
+    border: 1px solid #ccc; /* Рамка вокруг поля ввода */
+    border-radius: 4px; /* Скругление углов */
+}
+
+#submitButton {
+    padding: 10px 15px; /* Отступ для кнопки */
+    background-color: #007bff; /* Цвет фона кнопки */
+    color: white; /* Цвет текста кнопки */
+    border: none; /* Убираем рамку */
+    border-radius: 4px; /* Скругление углов кнопки */
+    cursor: pointer; /* Указатель при наведении */
+    width: 15%; /* Кнопка на всю ширину родителя */
+    margin-bottom: 30px;
+    position: relative; /* Позволяет использовать z-index */
+    z-index: 1; /* Поднимаем форму над полупрозрачным слоем */
+}
+
+#submitButton:hover {
+    background-color: #0056b3; /* Цвет кнопки при наведении */
+}
+
+#message {
+    margin-top: 10px; /* Отступ сверху для сообщения */
+}
+
+/* Добавьте отступы от верхней ссылки или других элементов */
+.content {
+    padding-top: 30px; /* Отступ сверху для всего содержимого */
+}
+
+.page-footer {
+    background: #770000; /* Цвет фона футера */
+    color: #b18e8e; /* Цвет текста футера */
+    text-align: center; /* Центрируем текст */
+    padding: 0.4rem; /* Убираем боковые отступы */
+    width: 100%; /* Футер занимает всю ширину */
+    margin-top: auto; /* Прижимаем футер к низу страницы */
+    position: relative; /* Позволяет использовать z-index */
+    z-index: 1; /* Поднимаем форму над полупрозрачным слоем */
+}
